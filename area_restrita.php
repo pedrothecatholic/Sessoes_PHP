@@ -35,6 +35,22 @@ verificarLogin();
 
     <h1>ÁREA RESTRITA</h1>
 
+    <div class='toolbar'>
+
+        <h2>
+
+            <?php echo 'Olá ' . strtoupper($_SESSION['usuario']) . ' - Login efetuado em: ' . $_SESSION['data_hora']; ?>
+
+        </h2>
+
+        <h2>
+
+            <a class="material-icons" href="processa_login.php?logout=true">logout</a>
+
+        </h2>
+
+    </div>
+
 </body>
 
 </html>

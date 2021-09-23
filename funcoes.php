@@ -32,19 +32,31 @@ function realizarLogin($usuario, $senha, $dados)
     }
 
     header('location: index.php');
-
 }
 
 /* 
 FUNÇÃO DE VERIFICAÇÃO DE LOGIN 
 VERIFICA SE O USUÁRIO PASSOU PELO PROCESSO DE LOGIN
 */
-function verificarLogin(){
+function verificarLogin()
+{
 
-    if($_SESSION["id"] != session_id() || (empty($_SESSION["id"]))){
-        
-        header('location: index.html');
+    if ($_SESSION["id"] != session_id() || (empty($_SESSION["id"]))) {
 
+        header('location: index.php');
     }
+}
 
+/* 
+FUNÇÃO DE FINALIZAÇÃO DE LOGIN 
+EFETUA A AÇÃO DE SAIR DO USUÁRIO DESTRUINDO A SESSÃO
+*/
+
+function finalizarLogin()
+{
+
+    session_unset(); //LIMPA TODAS AS VARIÁVEIS
+    session_destroy(); //DESTRÓI A SESSÃO ATIVA
+
+    header('location: index.php');
 }
